@@ -4,7 +4,7 @@ color a
 set /A num=0
 :loop
 set /A num=%num%+1
-echo open 192.168.1.5 > setscreen.txt
+echo open chatras.ddns.net > setscreen.txt
 echo user pi raspberry >> setscreen.txt
 echo binary >> setscreen.txt
 echo get %num%.dat >> setscreen.txt

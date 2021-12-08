@@ -2,6 +2,7 @@
 title chat raspberry pi
 color a
 cls
+start check.bat
 cd > %temp%\location.txt
 if not exist 0.dat echo > 0.dat
 if not exist name.txt goto name

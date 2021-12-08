@@ -18,8 +18,16 @@ for %%x in (*.dat) do (
 set /A send=%max%+1
 cls
 set /p enter=enter: 
+setlocal enabledelayedexpansion
+set max=0
+for %%x in (*.dat) do (
+  set "FN=%%~nx"
+  set "FN=!FN:version-=!"
+  if !FN! GTR !max! set max=!FN!
+)
+set /A send=%max%+1
 echo %name%: %enter% > box\%send%.dat
-echo open 192.168.1.5 > setsend.txt
+echo open chatras.ddns.net > setsend.txt
 echo user pi raspberry >> setsend.txt
 echo binary >> setsend.txt
 echo put box\%send%.dat >> setsend.txt
